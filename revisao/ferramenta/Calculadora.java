@@ -2,9 +2,10 @@ package revisao.ferramenta;
 
 public class Calculadora {
 
-    private Integer a;
-    private Integer b;
+    public Integer a;
+    public Integer b;
     private String operador;
+    public char[] operar;
 
     public Integer getA(){
         return this.a;

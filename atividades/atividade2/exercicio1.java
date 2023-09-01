@@ -1,47 +1,74 @@
-import java.util.Scanner;
 
-public class Calculadora{
 
-    public static void main(String[] args) {
+/**
+ * Calculadora
+ */
+public class exercicio1 {
 
-        Scanner scanner = new Scanner(System.in);
+    private Integer a;
+    private Integer b;
+    private String operador;
 
-        System.out.print("Digite o primeiro número: ");
-        double numero1 = scanner.nextDouble();
+    public Integer getA(){
+        return this.a;
+    }
 
-        System.out.print("Digite o segundo número: ");
-        double numero2 = scanner.nextDouble();
+    public void setA(Integer a){
+        this.a = a;
+    }
 
-        System.out.print("Digite a operação (+, -, *, /): ");
-        char operacao = scanner.next().charAt(0);
+    public Integer getB(){
+        return this.b;
+    }
 
-        double resultado = 0.0;
+    public void setB(Integer b){
+        this.b = b;
+    }
 
-        switch (operacao) {
-            case '+':
-                resultado = numero1 + numero2;
+    public String getOperador(){
+        return this.operador;
+    }
+
+    public void setOperador(String op) throws Exception {
+        Boolean err = true;
+        switch (op) {
+            case "+":
+                err = false;
                 break;
-            case '-':
-                resultado = numero1 - numero2;
+            case "-":
+                err = false;
                 break;
-            case '*':
-                resultado = numero1 * numero2;
+            case "*":
+                err = false;
                 break;
-            case '/':
-                if (numero2 != 0) {
-                    resultado = numero1 / numero2;
-                } else {
-                    System.out.println("Erro: Divisão por zero não é permitida.");
-                    return;
-                }
+            case "/":
+                err = false;
                 break;
-            default:
-                System.out.println("Operação inválida.");
-                return;
         }
 
-        System.out.println("Resultado: " + resultado);
+        if(err){
+            throw new Exception("Operador inválido");
+        }
 
-        scanner.close();
+        this.operador = op;
+    }
+
+    public Integer operar(){
+        Integer ret = 0;
+        switch (this.operador) {
+            case "+":
+                ret = this.a + this.b;
+                break;
+            case "-":
+                ret = this.a - this.b;
+                break;
+            case "*":
+                ret = this.a * this.b;
+                break;
+            case "/":
+                ret = this.a / this.b;
+                break;
+        }
+        return ret;
     }
 }

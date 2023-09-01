@@ -9,6 +9,6 @@ public class Pessoa {
     }
 
     public void cumprimentar(){
-        System.out.println(x:"Ola");
+        System.out.println(palavraCumprimento:"Ola");
     }
 }
