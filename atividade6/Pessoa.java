@@ -1,4 +1,4 @@
-package atividades.atividade6;
+package atividade6;
 
 public class Pessoa {
     

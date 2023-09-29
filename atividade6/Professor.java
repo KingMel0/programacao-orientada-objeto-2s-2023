@@ -1,4 +1,4 @@
-package atividades.atividade6;
+package atividade6;
 
 public class Professor extends Pessoa {
     private String materia;
@@ -12,7 +12,7 @@ public class Professor extends Pessoa {
         return materia;
     }
 
-    public void teach() {
-        System.out.println(getNome() + " está dando aula de " + materia + ".");
+    public void ensinar() {
+        System.out.println(getNome() + " esta dando aula de " + materia + ".");
     }
 }

@@ -1,4 +1,4 @@
-package atividades.atividade6;
+package atividade6;
 
 public class Aluno extends Pessoa {
     private int alunoId;
